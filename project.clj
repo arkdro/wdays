@@ -4,5 +4,6 @@
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [clj-getopts "0.0.2"]
                  [org.clojure/data.json "0.2.2"]
+                 [org.clojure/tools.trace "0.7.5"]
                  [clj-http "0.7.1"]
                  ])

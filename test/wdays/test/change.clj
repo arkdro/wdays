@@ -1,5 +1,6 @@
 (ns wdays.test.change
   (:use [wdays.change])
+  ;;(:use [clojure.tools.trace])
   (:use [clojure.test]))
 
 (deftest upd-wday-test
