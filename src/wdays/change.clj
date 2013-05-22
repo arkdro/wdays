@@ -17,9 +17,9 @@
     (get-in response [:body :content])))
 
 (defn upd-wday [wday]
-  (if (seq? wday)
-    (map int wday)
-    wday))
+  (cond (seq? wday) (map int wday)
+        (vector? wday) (map int wday)
+        :default wday))
 
 (defn upd-match [match]
   (let [wday (get-in match ["day" "weekDay"])
