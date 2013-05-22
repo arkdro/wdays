@@ -16,13 +16,19 @@
         response (client/post url pars)]
     (get-in response [:body :content])))
 
-(defn upd-instrument [url id instrument]
-  nil)
+(defn upd-instrument [instrument]
+  (assert false "not implemented")
+  )
+
+(defn put-instrument [url id updated]
+  (assert false "not implemented")
+  )
 
 (defn change [{:keys [url id] :as opts}]
   (let [
         _ (print "\n2, opts:" opts "\nurl:" url "id:" id)
-        instrument (get-current url id)]
-    (upd-instrument url id instrument)
+        instrument (get-current url id)
+        updated (upd-instrument instrument)]
+    put-instrument url id updated
     ;;(print "\ncur:" data)
     ))
