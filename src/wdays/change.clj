@@ -16,9 +16,31 @@
         response (client/post url pars)]
     (get-in response [:body :content])))
 
+(defn upd-wday [wday]
+  (if (seq? wday)
+    (map int wday)
+    wday))
+
+(defn upd-match [match]
+  (let [wday (get-in match ["day" "weekDay"])
+        new-wday (upd-wday wday)]
+    (assoc-in match ["day" "weekDay"] new-wday)))
+
+(defn upd-matches [matches]
+  (map upd-match matches))
+
+(defn upd-rule [rule]
+  (let [matches (get rule "matches")
+        new-matches (upd-matches matches)]
+    (assoc rule "matches" new-matches)))
+
+(defn upd-rules [rules]
+  (map upd-rule rules))
+
 (defn upd-instrument [instrument]
-  (assert false "not implemented")
-  )
+  (let [rules (get instrument "rules")
+        new-rules (upd-rules rules)]
+    (assoc instrument "rules" new-rules)))
 
 (defn put-instrument [url id updated]
   (assert false "not implemented")
