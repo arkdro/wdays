@@ -13,8 +13,10 @@
 
 (defn get-current [url id]
   (let [pars (make-req id)
-        response (client/post url pars)]
-    (get-in response [:body :content])))
+        response (client/post url pars)
+        body (get-in response [:body])
+        decoded (json/read-str body)]
+    (get decoded "content")))
 
 (defn upd-wday [wday]
   (cond (seq? wday) (map int wday)
