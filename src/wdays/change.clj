@@ -53,6 +53,6 @@
         _ (print "\n2, opts:" opts "\nurl:" url "id:" id)
         instrument (get-current url id)
         updated (upd-instrument instrument)]
-    put-instrument url id updated
+    (put-instrument url id updated)
     ;;(print "\ncur:" data)
     ))
