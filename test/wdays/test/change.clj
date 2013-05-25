@@ -12,7 +12,7 @@
 
 (deftest make-req-test
   (let [id "04a47f80137f6853a6e5fa23af2437f1"
-        req (wdays.change/make-req id)]
+        req (wdays.change/make-req-fetch id)]
     (is (= req
            {:headers {"X-Editor-Version" "1.0.0"}, :body "{\"type\":\"value\",\"content\":\"04a47f80137f6853a6e5fa23af2437f1\"}"}
            ))))
