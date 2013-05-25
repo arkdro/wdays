@@ -1,10 +1,10 @@
 # wdays
 
-FIXME: write description
+http post example
 
 ## Usage
 
-FIXME: write
+lein run --url http://host/base_srv/base_tag: --id 37f1
 
 ## License
 
