@@ -25,8 +25,9 @@
   (make-url url "update"))
 
 (defn get-current [url id]
-  (let [pars (make-req id)
-        response (client/post url pars)
+  (let [pars (make-req-fetch id)
+        url-get (make-url-get url)
+        response (client/post url-get pars)
         body (get-in response [:body])
         decoded (json/read-str body)]
     (get decoded "content")))
