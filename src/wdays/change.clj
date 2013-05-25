@@ -29,7 +29,7 @@
         url-get (make-url-get url)
         response (client/post url-get pars)
         body (get-in response [:body])
-        decoded (json/read-str body)]
+        decoded (json/parse-string body)]
     (get decoded "content")))
 
 (defn upd-wday [wday]
