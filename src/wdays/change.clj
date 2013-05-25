@@ -65,9 +65,6 @@
 
 (defn change [{:keys [url id] :as opts}]
   (let [
-        _ (print "\n2, opts:" opts "\nurl:" url "id:" id)
         instrument (get-current url id)
         updated (upd-instrument instrument)]
-    (put-instrument url id updated)
-    ;;(print "\ncur:" data)
-    ))
+    (put-instrument url id updated)))
