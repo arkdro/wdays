@@ -3,7 +3,11 @@
   (:require [clj-http.client :as client])
   )
 
-(defn json [&a] nil)
+(defn make-req-fetch [id]
+  (let [hdr {"X-Editor-Version" "1.0.0"}
+        data (json/generate-string {"type" "value" "content" id})]
+    {:headers hdr
+     :body data}))
 
 (defn make-req [id]
   (let [hdr {"X-Editor-Version" "1.0.0"}
