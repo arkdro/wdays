@@ -1,5 +1,5 @@
 (ns wdays.change
-  (:require [clojure.data.json :as json])
+  (:require [cheshire.core :refer :all :as json])
   (:require [clj-http.client :as client])
   )
 
