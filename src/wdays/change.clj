@@ -53,9 +53,10 @@
         new-rules (upd-rules rules)]
     (assoc instrument "rules" new-rules)))
 
-(defn put-instrument [url id updated]
-  (assert false "not implemented")
-  )
+(defn put-instrument [url id instrument]
+  (let [pars (make-req-update instrument)
+        url-update (make-url-update url)]
+    (client/post url-update pars)))
 
 (defn change [{:keys [url id] :as opts}]
   (let [
