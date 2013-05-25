@@ -9,9 +9,9 @@
     {:headers hdr
      :body data}))
 
-(defn make-req [id]
+(defn make-req-update [instrument]
   (let [hdr {"X-Editor-Version" "1.0.0"}
-        data (json/write-str {"type" "value" "content" id})]
+        data (json/generate-string {"type" "document" "content" instrument})]
     {:headers hdr
      :body data}))
 
