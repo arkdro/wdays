@@ -11,6 +11,15 @@
     {:headers hdr
      :body data}))
 
+(defn make-url [base suffix]
+  (str base suffix))
+
+(defn make-url-get [url]
+  (make-url url "get"))
+
+(defn make-url-update [url]
+  (make-url url "update"))
+
 (defn get-current [url id]
   (let [pars (make-req id)
         response (client/post url pars)
