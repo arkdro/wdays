@@ -1,6 +1,6 @@
 (ns wdays.test.change
   (:use [wdays.change])
-  (:require [clojure.data.json :as json])
+  (:require [cheshire.core :refer :all :as json])
   ;;(:use [clojure.tools.trace])
   (:use [clojure.test]))
 
